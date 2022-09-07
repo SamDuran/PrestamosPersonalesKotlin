@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Prestamos_Personales.iml" filepath="$PROJECT_DIR$/.idea/modules/Prestamos_Personales.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.androidTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prestamos_Personales.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/PrestamosPersonales.iml" filepath="$PROJECT_DIR$/.idea/modules/PrestamosPersonales.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PrestamosPersonales.app.unitTest.iml" />
     </modules>
   </component>
 </project>

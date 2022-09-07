@@ -1,21 +1,33 @@
 package edu.ucne.prestamospersonales.ui.theme
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
+@SuppressLint("ConflictingOnColor")
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = LightBlue,
+    primaryVariant = RegularBlue,
+    secondary = Ocean,
+    background = DarkBlue,
+    surface = RegularBlue,
+    onSurface = LightBlue,
+    onPrimary = LightGold
 )
 
+@SuppressLint("ConflictingOnColor")
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = RegularBlue,
+    primaryVariant = DarkBlue,
+    secondary = Ocean,
+    background = LightBlue,
+    surface = MediumBlue,
+    onSurface = DarkBlue,
+    onPrimary = LightGold
+
 
     /* Other default colors to override
     background = Color.White,
