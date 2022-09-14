@@ -18,25 +18,27 @@ import data.entities.Ocupacion
 
 @Composable
 fun OcupacionListScreen(
-    onClick: () -> Unit,
-    viewModel : OcupacionListViewModel = hiltViewModel()
-){
+    AddClick: () -> Unit,
+    viewModel: OcupacionListViewModel = hiltViewModel()
+) {
     Scaffold(
         topBar = {
             TopAppBar(title = { Text("Lista de Ocupaciones") })
         },
         floatingActionButton = {
-            FloatingActionButton(onClick = onClick) {
+            FloatingActionButton(onClick = AddClick) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Agregar Ocupación")
             }
         }
     ) {
         val uiState by viewModel.uiState.collectAsState()
-        Column(modifier = Modifier
-            .fillMaxWidth()
-            .padding(it)) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(it)
+        ) {
 
-            StudentList(
+            OcupacionList(
                 ocupaciones = uiState.ocupaciones,
                 modifier = Modifier
                     .fillMaxSize()
@@ -47,7 +49,7 @@ fun OcupacionListScreen(
 }
 
 @Composable
-fun StudentList(
+fun OcupacionList(
     ocupaciones: List<Ocupacion>,
     modifier: Modifier = Modifier
 ) {
@@ -64,16 +66,17 @@ fun OcupacionRow(
     modifier: Modifier = Modifier
 ) {
     Card(
-        elevation = 7.dp,
+        elevation = 10.dp,
         modifier = modifier
             .padding(8.dp)
             .background(MaterialTheme.colors.surface)
-            .clip(RoundedCornerShape(percent= 20))
-    ){
+            .background(color = MaterialTheme.colors.surface, shape = MaterialTheme.shapes.large)
+            //.clip(RoundedCornerShape(percent = 25))
+    ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal=10.dp)
+                .padding(horizontal = 10.dp)
         ) {
             Text(
                 text = ocupacion.descripcion,
@@ -85,7 +88,7 @@ fun OcupacionRow(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "Salario: \$USD ${ocupacion.salario}",
+                    text = "Salario: USD\$ ${ocupacion.salario}",
                     modifier = Modifier.padding(horizontal = 5.dp)
                 )
             }

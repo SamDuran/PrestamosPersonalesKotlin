@@ -15,7 +15,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import ui.OcupacionViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -32,14 +31,9 @@ fun OcupacionScreen(
         floatingActionButton = {
             FloatingActionButton(onClick = {
                 if(viewModel.salario>= 260.32 && viewModel.descripcion.length>3){
-                    viewModel.Save()
+                    viewModel.save()
                     onNavigateBack()
                 }
-//                        else if(viewModel.descripcion.length<=3) {
-//                            //val toast= Toast.makeText(applicationContext, "",Toast.LENGTH_SHORT).show()
-//                        }else {
-//
-//                        }
             }) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Guardar")
             }
@@ -78,14 +72,9 @@ fun OcupacionScreen(
                     onDone = {
                         focusManager.clearFocus()
                         if(viewModel.salario>= 260.32 && viewModel.descripcion.length>3){
-                            viewModel.Save()
+                            viewModel.save()
                             onNavigateBack()
                         }
-//                        else if(viewModel.descripcion.length<=3) {
-//                            //val toast= Toast.makeText(applicationContext, "",Toast.LENGTH_SHORT).show()
-//                        }else {
-//
-//                        }
                     }
                 )
             )

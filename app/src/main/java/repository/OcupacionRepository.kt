@@ -7,19 +7,19 @@ import javax.inject.Inject
 class OcupacionRepository @Inject constructor(
     private val db : AppDataBase
 ){
-    suspend fun insertOcupacion(ocupacion : Ocupacion) {
-        db.ocupacionDao.insertOcupacion(ocupacion)
+    suspend fun insert(ocupacion : Ocupacion) {
+        db.ocupacionDao.insert(ocupacion)
     }
 
-    suspend fun updateOcupacion(ocupacion : Ocupacion) {
-        db.ocupacionDao.updateOcupacion(ocupacion)
+    suspend fun update(ocupacion : Ocupacion) {
+        db.ocupacionDao.update(ocupacion)
     }
 
-    suspend fun deleteOcupacion(ocupacion: Ocupacion) {
-        db.ocupacionDao.deleteOcupacion(ocupacion)
+    suspend fun delete(ocupacion: Ocupacion) {
+        db.ocupacionDao.delete(ocupacion)
     }
 
-    fun getOcupacion(id : Int) = db.ocupacionDao.getOcupacion(id)
+    fun getOcupacion(id : Int) = db.ocupacionDao.find(id)
 
-    fun getAll() = db.ocupacionDao.getAll()
+    fun getAll() = db.ocupacionDao.getList()
 }

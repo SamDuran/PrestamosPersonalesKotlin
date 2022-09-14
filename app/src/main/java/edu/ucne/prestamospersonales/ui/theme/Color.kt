@@ -1,10 +1,11 @@
 package edu.ucne.prestamospersonales.ui.theme
 
+import android.annotation.SuppressLint
 import androidx.compose.ui.graphics.Color
 
-val LightBlue = Color(0xFFDDECFF)
-val RegularBlue = Color(0xFF2B51D3)
-val MediumBlue = Color(0xFF477CFF)
-val DarkBlue = Color(0xFF2445B5)
-val Ocean = Color(0xFFB3E9FF)
-val LightGold = Color(0xFFFAFFB3)
+val BlueBGDarkMode = Color( 0xFF0F1839)
+val RegularBlueBG = Color( 0xFF172A73)
+val RegularBlue = Color(0xFF1E3794)
+val LightBlue = Color(0xFF2858FF)
+val LightlyBlue = Color(0xFFD1FFFD)
+val ExtremelyLightBlue = Color( 0xFFF2FEFF)

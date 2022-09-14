@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import data.AppDataBase
+import util.Converters
 import javax.inject.Singleton
 
 @Module
@@ -20,7 +21,7 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             AppDataBase::class.java,
-            "OcupacionDB"
-        ).fallbackToDestructiveMigration().build()
+            "PrestamosPersonalesDB"
+        ).fallbackToDestructiveMigration().addTypeConverter(Converters()).build()
     }
 }

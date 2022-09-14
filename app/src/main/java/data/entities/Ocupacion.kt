@@ -1,5 +1,6 @@
 package data.entities
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,6 +8,8 @@ import androidx.room.PrimaryKey
 data class Ocupacion(
     @PrimaryKey(autoGenerate = true)
     val id: Int=0,
-    val descripcion: String="",
+    @ColumnInfo(name="descripcion") val descripcion: String="",
     val salario: Float=0.0f
-)
+){
+    override fun toString() : String = descripcion
+}

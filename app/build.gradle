@@ -76,6 +76,9 @@ android {
 
                 //viewmodel
                 implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1"
+
+                //Icons
+                implementation "androidx.compose.material:material-icons-extended:$compose_version"
             }
         }
     }

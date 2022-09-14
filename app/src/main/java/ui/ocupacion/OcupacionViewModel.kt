@@ -1,4 +1,4 @@
-package ui
+package ui.ocupacion
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,9 +18,9 @@ class OcupacionViewModel @Inject constructor (
     var descripcion by mutableStateOf("")
     var salario by mutableStateOf(0f)
 
-    fun Save() {
+    fun save() {
         viewModelScope.launch {
-            repository.insertOcupacion(
+            repository.insert(
                 Ocupacion(
                     descripcion = descripcion,
                     salario = salario

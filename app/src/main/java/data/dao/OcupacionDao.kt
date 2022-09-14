@@ -7,17 +7,19 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface OcupacionDao {
     @Insert
-    suspend fun insertOcupacion(ocupacion: Ocupacion)
+    suspend fun insert(ocupacion: Ocupacion)
 
     @Update
-    suspend fun updateOcupacion(ocupacion: Ocupacion)
+    suspend fun update(ocupacion: Ocupacion)
 
     @Delete
-    suspend fun deleteOcupacion(ocupacion: Ocupacion)
+    suspend fun delete(ocupacion: Ocupacion)
 
     @Query("SELECT * FROM Ocupaciones Where id = :id")
-    fun getOcupacion(id:Int): Flow<Ocupacion>
+    fun find(id:Int): Flow<Ocupacion>
+
+
 
     @Query("SELECT * FROM Ocupaciones")
-    fun getAll(): Flow<List<Ocupacion>>
+    fun getList(): Flow<List<Ocupacion>>
 }

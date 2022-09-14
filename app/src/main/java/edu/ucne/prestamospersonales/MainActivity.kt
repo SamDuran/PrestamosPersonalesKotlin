@@ -10,16 +10,16 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import edu.ucne.prestamospersonales.ui.theme.PrestamosPersonalesTheme
 import ui.ocupacion.OcupacionScreen
 import ui.ocupacion_list.OcupacionListScreen
-import dagger.hilt.android.AndroidEntryPoint
+import ui.persona.PersonaScreen
+import ui.persona_list.PersonaListScreen
 import util.Screen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -31,16 +31,26 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = Screen.OcupacionListScreen.ruta
+                        startDestination = Screen.PersonaListScreen.ruta
                     ) {
                         composable(Screen.OcupacionListScreen.ruta) {
                             OcupacionListScreen(
-
-                                onClick = { navController.navigate(Screen.OcupacionScreen.ruta) }
+                                AddClick = { navController.navigate(Screen.OcupacionScreen.ruta) }
+                            )
+                        }
+                        composable(Screen.PersonaListScreen.ruta) {
+                            PersonaListScreen(
+                                AddClick = { navController.navigate(Screen.PersonaScreen.ruta) }
                             )
                         }
                         composable(Screen.OcupacionScreen.ruta) {
                             OcupacionScreen({ navController.navigateUp() })
+                        }
+                        composable(Screen.PersonaScreen.ruta) {
+                            PersonaScreen (
+                                onNavigateBack= { navController.navigateUp() },
+                                AddOcupacionClick = {navController.navigate(Screen.OcupacionScreen.ruta)}
+                            )
                         }
                     }
                 }
