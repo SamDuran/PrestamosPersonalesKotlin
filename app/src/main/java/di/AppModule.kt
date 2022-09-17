@@ -21,7 +21,7 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             AppDataBase::class.java,
-            "PrestamosPersonalesDB"
+            "PrestamosPersonales.db"
         ).fallbackToDestructiveMigration().addTypeConverter(Converters()).build()
     }
 }

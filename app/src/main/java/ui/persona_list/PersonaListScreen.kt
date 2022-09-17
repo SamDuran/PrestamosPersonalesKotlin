@@ -56,12 +56,14 @@ fun PersonaListScreen (
 @Composable
 fun PersonaList(
     personas : List<Persona>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    viewModel: PersonaListViewModel = hiltViewModel()
 ) {
 
     LazyColumn(modifier = modifier.background(MaterialTheme.colors.background)) {
         this.items(personas) { persona ->
-            PersonaRow(persona = persona)
+            viewModel.getOcupacion(persona.ocupacionId)
+            PersonaRow(persona = persona, ocupacion = viewModel.ocupacion )
         }
     }
 }
@@ -70,6 +72,7 @@ fun PersonaList(
 @Composable
 fun PersonaRow(
     persona: Persona,
+    ocupacion : Ocupacion,
     modifier: Modifier = Modifier
 ) {
     var expanded by remember {mutableStateOf(false)}
@@ -95,13 +98,12 @@ fun PersonaRow(
                 style = MaterialTheme.typography.h5,
                 modifier = Modifier.padding(horizontal = 5.dp)
             )
-            Row(
+            Column(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Text(
-                    text = "OcupacionId: ${persona.ocupacionId}",
-                    modifier = Modifier.padding(horizontal = 5.dp)
+                    text = "Ocupacion: ${ocupacion.descripcion}",
+                    modifier = Modifier.padding(5.dp)
                 )
                 Text(
                     text = "Email: ${persona.email}",
@@ -155,7 +157,7 @@ fun ExtraInformation (
         Column (
             modifier = Modifier.fillMaxWidth()
         ){
-            Text(text = "Nacimiento: ${DateConverter().toString(persona.fechaNacimiento)}", modifier = Modifier.padding(horizontal = 5.dp))
+            Text(text = "Nacimiento: ${DateConverter().aString(persona.fechaNacimiento)}", modifier = Modifier.padding(horizontal = 5.dp))
             Text(text ="Direccion: ${persona.direccion}", modifier = Modifier.padding(horizontal = 5.dp))
         }
     }

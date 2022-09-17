@@ -2,17 +2,19 @@ package edu.ucne.prestamospersonales.ui.theme
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.*
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.darkColors
+import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 
 @SuppressLint("ConflictingOnColor")
 private val DarkColorPalette = darkColors(
 
     background = BlueBGDarkMode, //bg
-    primary = LightlyBlue,  //Fondo de botones y al momento de seleccionar un tf
+    primary = LightlyGold,  //Fondo de botones y al momento de seleccionar un tf
     secondary = RegularBlue, // FloatActionButton
     surface = RegularBlueBG, // bg de cards y de top/bottom bars
-    onSurface = ExtremelyLightBlue, //Letras dentro de cards o dentro de bars
+    onSurface = LightlyGold, //Letras dentro de cards o dentro de bars
     onPrimary = RegularBlue,
     onSecondary = LightlyBlue,
 )
@@ -24,16 +26,6 @@ private val LightColorPalette = lightColors(
     secondary = RegularBlue,
     surface = RegularBlue,
     onSurface = BlueBGDarkMode
-
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
 )
 
 @Composable

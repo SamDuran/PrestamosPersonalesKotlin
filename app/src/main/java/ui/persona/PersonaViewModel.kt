@@ -21,7 +21,7 @@ class PersonaViewModel @Inject constructor(
     var celular by mutableStateOf("")
     var email by mutableStateOf("")
     var direccion by mutableStateOf("")
-    var fechaNacimiento by mutableStateOf(Date(1,1,1))
+    var fechaNacimiento by mutableStateOf(Date())
     var ocupacionId by mutableStateOf(0)
 
     fun save() {

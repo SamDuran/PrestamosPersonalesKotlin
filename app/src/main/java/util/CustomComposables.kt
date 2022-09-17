@@ -35,7 +35,7 @@ fun OutlineTextFieldWithErrorView(
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     shape: Shape = MaterialTheme.shapes.small,
     colors: TextFieldColors = TextFieldDefaults.outlinedTextFieldColors(),
-    errorMsg : String = ""
+    errorMsg: String = ""
 ){
 
     Column(

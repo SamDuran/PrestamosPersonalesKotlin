@@ -21,7 +21,7 @@ class PersonaRepository @Inject constructor(
 
     fun getPersona(id: Int) = db.personaDao.find(id)
 
-
+    fun getOcupacion(id: Int) = db.ocupacionDao.find(id)
 
     fun getList() = db.personaDao.getList()
 }

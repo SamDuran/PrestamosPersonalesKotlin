@@ -13,24 +13,16 @@ class Converters {
 
     @TypeConverter
     fun dateToTimestamp(date: Date?): Long? {
-        return date?.time?.toLong()
+        return date?.time
     }
 }
 
-@ProvidedTypeConverter
+
+@Suppress("DEPRECATION")
 class DateConverter {
-    @TypeConverter
-    fun stringToDate(value: String?): Date? {
-        return value?.let {Date(it)}
-    }
 
-    @TypeConverter
-    fun dateToString(value: Date?): String? {
-        return value?.time?.toString()
-    }
+    fun aString(value: Date) : String {
 
-    fun toString(value: Date?) : String {
-
-        return "${value?.day}/${value?.month}/${value?.year}"
+        return "${value.day}/${value.month}/${value.year}"
     }
 }
