@@ -157,7 +157,7 @@ fun ExtraInformation (
         Column (
             modifier = Modifier.fillMaxWidth()
         ){
-            Text(text = "Nacimiento: ${DateConverter().aString(persona.fechaNacimiento)}", modifier = Modifier.padding(horizontal = 5.dp))
+            Text(text = "Nacimiento: ${DateConverter().toString(persona.fechaNacimiento)}", modifier = Modifier.padding(horizontal = 5.dp))
             Text(text ="Direccion: ${persona.direccion}", modifier = Modifier.padding(horizontal = 5.dp))
         }
     }

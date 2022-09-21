@@ -19,5 +19,5 @@ interface PersonaDao {
     fun find(id:Int): Flow<Persona>
 
     @Query("SELECT * FROM Personas")
-    fun getList():Flow<List<Persona>>
+    fun getList(): Flow<List<Persona>>
 }

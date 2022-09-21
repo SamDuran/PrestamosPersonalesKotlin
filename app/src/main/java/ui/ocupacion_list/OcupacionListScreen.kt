@@ -70,7 +70,6 @@ fun OcupacionRow(
             .padding(8.dp)
             .background(MaterialTheme.colors.surface)
             .background(color = MaterialTheme.colors.surface, shape = MaterialTheme.shapes.large)
-            //.clip(RoundedCornerShape(percent = 25))
     ) {
         Column(
             modifier = Modifier

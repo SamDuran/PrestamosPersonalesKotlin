@@ -21,8 +21,6 @@ class Converters {
 @Suppress("DEPRECATION")
 class DateConverter {
 
-    fun aString(value: Date) : String {
 
-        return "${value.day}/${value.month}/${value.year}"
-    }
+    fun toString(value: Date) : String = "${value.day}/${value.month}/${value.year}"
 }

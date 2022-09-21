@@ -11,10 +11,6 @@ class PersonaRepository @Inject constructor(
         db.personaDao.insert(persona)
     }
 
-    suspend fun update(persona: Persona) {
-        db.personaDao.update(persona)
-    }
-
     suspend fun delete(persona: Persona) {
         db.personaDao.delete(persona)
     }

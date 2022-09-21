@@ -16,12 +16,12 @@ import javax.inject.Singleton
 object AppModule {
     @Singleton
     @Provides
-    fun providesDatabase(@ApplicationContext context:Context) : AppDataBase
-    {
+    fun providesDatabase(@ApplicationContext context:Context) : AppDataBase {
         return Room.databaseBuilder(
             context,
             AppDataBase::class.java,
-            "PrestamosPersonales.db"
+            "PrestamosPersonalesDB.db"
         ).fallbackToDestructiveMigration().addTypeConverter(Converters()).build()
+        //.addTypeConverter(Converters())
     }
 }

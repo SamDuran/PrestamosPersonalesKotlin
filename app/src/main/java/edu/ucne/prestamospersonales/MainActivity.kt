@@ -1,8 +1,10 @@
 package edu.ucne.prestamospersonales
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
@@ -16,10 +18,12 @@ import ui.ocupacion.OcupacionScreen
 import ui.ocupacion_list.OcupacionListScreen
 import ui.persona.PersonaScreen
 import ui.persona_list.PersonaListScreen
+import ui.prestamo.PrestamoScreen
 import util.Screen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -31,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = Screen.PersonaListScreen.ruta
+                        startDestination = Screen.PrestamoScreen.ruta
                     ) {
                         composable(Screen.OcupacionListScreen.ruta) {
                             OcupacionListScreen(
@@ -47,9 +51,15 @@ class MainActivity : ComponentActivity() {
                             OcupacionScreen({ navController.navigateUp() })
                         }
                         composable(Screen.PersonaScreen.ruta) {
-                            PersonaScreen (
-                                onNavigateBack= { navController.navigateUp() },
-                                AddOcupacionClick = {navController.navigate(Screen.OcupacionScreen.ruta)}
+                            PersonaScreen(
+                                onNavigateBack = { navController.navigateUp() },
+                                AddOcupacionClick = { navController.navigate(Screen.OcupacionScreen.ruta) }
+                            )
+                        }
+                        composable(Screen.PrestamoScreen.ruta) {
+                            PrestamoScreen(
+                                onNavigateBack = { navController.navigateUp() },
+                                addPersonaClick = { navController.navigate(Screen.PersonaScreen.ruta) }
                             )
                         }
                     }

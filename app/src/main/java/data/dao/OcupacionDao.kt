@@ -3,6 +3,7 @@ package data.dao
 import androidx.room.*
 import data.entities.*
 import kotlinx.coroutines.flow.Flow
+import data.entities.Ocupacion
 
 @Dao
 interface OcupacionDao {
@@ -17,8 +18,6 @@ interface OcupacionDao {
 
     @Query("SELECT * FROM Ocupaciones Where id = :id")
     fun find(id:Int): Flow<Ocupacion>
-
-
 
     @Query("SELECT * FROM Ocupaciones")
     fun getList(): Flow<List<Ocupacion>>

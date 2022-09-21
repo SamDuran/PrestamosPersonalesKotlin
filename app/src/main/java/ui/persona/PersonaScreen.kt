@@ -88,7 +88,7 @@ fun PersonaScreen(
                 }
             }
             ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Guardar")
+                Icon(imageVector = Icons.Default.Save, contentDescription = "Guardar")
             }
         }
     ) {

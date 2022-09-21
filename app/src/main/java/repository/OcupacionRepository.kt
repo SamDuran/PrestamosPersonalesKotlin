@@ -11,10 +11,6 @@ class OcupacionRepository @Inject constructor(
         db.ocupacionDao.insert(ocupacion)
     }
 
-    suspend fun update(ocupacion : Ocupacion) {
-        db.ocupacionDao.update(ocupacion)
-    }
-
     suspend fun delete(ocupacion: Ocupacion) {
         db.ocupacionDao.delete(ocupacion)
     }
