@@ -14,7 +14,6 @@
             <stringArg name="classpath">
               <args>
                 <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/R.jar</arg>
-                <arg>$MODULE_DIR$/../../../app/build/intermediates/compile_app_classes_jar/debug/classes.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9a3cb9205712e333e783fd4b4a4df7ef/transformed/hilt-navigation-compose-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7922397f0cfaa98e9e6b102e7972c3f7/transformed/navigation-compose-2.5.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/3cf553b974dbf581acd3b1c7502345ff/transformed/activity-compose-1.5.1-api.jar</arg>

@@ -129,6 +129,7 @@ fun HomeScreen(navController: NavHostController) {
             {
                 Text(
                     text = "Menú",
+                    color = MaterialTheme.colors.onBackground,
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.h4,
                     modifier = Modifier

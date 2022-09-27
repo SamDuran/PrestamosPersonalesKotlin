@@ -31,7 +31,7 @@ fun bgVariant3() : Color = if (isSystemInDarkTheme()) Color(0xFF00388B) else Col
 fun bgVariant4() : Color = if (isSystemInDarkTheme()) Color(0xFF002761) else Color(0xFF003786)
 
 @Composable
-fun surfaceVariant() : Color = if (isSystemInDarkTheme()) Color(0xFF002356) else Color(0xFF002ED0)
+fun surfaceVariant() : Color = if (isSystemInDarkTheme()) Color(0xFF002356) else Color(0xFF40A3FF)
 
 @Composable
 fun surfaceVariant2() : Color = if (isSystemInDarkTheme()) Color(0xFF071F74) else Color(0xFF0025A7)

@@ -2,8 +2,8 @@
   <library name="Gradle: androidx.compose.material:material-ripple:1.2.0-beta02@aar">
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/350d394144e6faca650b832ed709625a/transformed/material-ripple-1.2.0-beta02/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/350d394144e6faca650b832ed709625a/transformed/material-ripple-1.2.0-beta02/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/350d394144e6faca650b832ed709625a/transformed/material-ripple-1.2.0-beta02/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/350d394144e6faca650b832ed709625a/transformed/material-ripple-1.2.0-beta02/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
