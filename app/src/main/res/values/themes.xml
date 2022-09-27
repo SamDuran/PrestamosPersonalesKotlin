@@ -4,4 +4,6 @@
     <style name="Theme.PrestamosPersonales" parent="android:Theme.Material.Light.NoActionBar">
         <item name="android:statusBarColor">@color/StatusBar</item>
     </style>
+
+
 </resources>

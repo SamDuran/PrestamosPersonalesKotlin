@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="StatusBar">#FF000000</color>
+    <color name="ColorAcent">#FF2858FF</color>
+    <color name="ColorOnPrimary">#FFF9FFFF</color>
+    <color name="BackGround">#FF00104b</color>
 </resources>

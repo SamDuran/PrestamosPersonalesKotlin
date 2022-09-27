@@ -6,26 +6,28 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 
-@SuppressLint("ConflictingOnColor")
+
 private val DarkColorPalette = darkColors(
 
     background = BlueBGDarkMode, //bg
-    primary = LightlyGold,  //Fondo de botones y al momento de seleccionar un tf
+    primary = LightlyBlue,  //Fondo de botones y al momento de seleccionar un tf
     secondary = RegularBlue, // FloatActionButton
     surface = RegularBlueBG, // bg de cards y de top/bottom bars
     onSurface = LightlyGold, //Letras dentro de cards o dentro de bars
     onPrimary = RegularBlue,
-    onSecondary = LightlyBlue,
+    onSecondary = LightlyGold,
 )
+
 
 @SuppressLint("ConflictingOnColor")
 private val LightColorPalette = lightColors(
     primary = RegularBlue,
-    primaryVariant = LightBlue,
-    secondary = RegularBlue,
+    primaryVariant = LightlyBlue,
+    secondary = LightBlue,
     surface = RegularBlue,
-    onSurface = BlueBGDarkMode
+    onSecondary = Color.White
 )
 
 @Composable

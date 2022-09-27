@@ -11,6 +11,7 @@ android {
     defaultConfig {
         applicationId "edu.ucne.prestamospersonales"
         minSdk 23
+        //noinspection OldTargetApi
         targetSdk 32
         versionCode 1
         versionName "1.0"
