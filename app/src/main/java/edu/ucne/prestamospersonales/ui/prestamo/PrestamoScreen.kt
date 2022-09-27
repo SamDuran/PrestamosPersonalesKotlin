@@ -78,7 +78,7 @@ fun PrestamoScreen(
     canSave = viewModel.fechaVencimiento.isNotEmpty()
             && (viewModel.uiState.balance.isNotEmpty() && (viewModel.uiState.balance.toDouble() > 1.0))
             && (viewModel.uiState.monto.isNotEmpty() && (viewModel.uiState.monto.toDouble() > 1.0))
-            && viewModel.uiState.prestamoId != 0
+            && viewModel.uiState.personaId != 0
 
     var showDatePicker by remember { mutableStateOf(false) }
     if (showDatePicker) {
