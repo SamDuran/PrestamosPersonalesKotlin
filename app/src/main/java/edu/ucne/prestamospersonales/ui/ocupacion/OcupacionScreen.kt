@@ -23,7 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import edu.ucne.prestamospersonales.ui.components.OutlinedTextFieldWithErrorView
 import edu.ucne.prestamospersonales.ui.components.RegistroBottomBar
 import edu.ucne.prestamospersonales.ui.components.StyledTopBar
-import edu.ucne.prestamospersonales.ui.components.TopBarStyles
+import edu.ucne.prestamospersonales.ui.components.TopBarStyle
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
@@ -55,7 +55,7 @@ fun OcupacionScreen(
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitle,
+                style = TopBarStyle.BackTitle,
                 title = "Registro de Ocupaciones",
                 onBackClick = onNavigateBack
             )

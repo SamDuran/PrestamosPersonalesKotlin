@@ -18,11 +18,12 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import edu.ucne.prestamospersonales.data.local.entities.Prestamo
 import edu.ucne.prestamospersonales.ui.components.ItemCard
 import edu.ucne.prestamospersonales.ui.components.StyledTopBar
-import edu.ucne.prestamospersonales.ui.components.TopBarStyles
+import edu.ucne.prestamospersonales.ui.components.TopBarStyle
 import edu.ucne.prestamospersonales.ui.persona.ExpandButton
-import edu.ucne.prestamospersonales.ui.theme.bgVariant
 import edu.ucne.prestamospersonales.ui.theme.bgVariant1
+import edu.ucne.prestamospersonales.ui.theme.bgVariant2
 import edu.ucne.prestamospersonales.util.DateConverter
+import edu.ucne.prestamospersonales.util.filtersPrestamo
 
 
 @Composable
@@ -35,9 +36,10 @@ fun PrestamosListScreen(
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitleFind,
+                style = TopBarStyle.BackTitleFind,
                 title = "Prestamos",
-                onBackClick = onNavigateBack
+                onBackClick = onNavigateBack,
+                filtros = filtersPrestamo
             )
         },
         floatingActionButton = {
@@ -70,7 +72,7 @@ fun PrestamoListBody(
     LazyColumn(
         modifier = modifier
             .background(brush = Brush.verticalGradient(
-                colors = listOf(bgVariant(), bgVariant1())))
+                colors = listOf(bgVariant1(), bgVariant2())))
     ) {
         this.items(prestamos) { prestamo ->
             val ocupacion = viewModel.getOcupacion(prestamo) ?: ""

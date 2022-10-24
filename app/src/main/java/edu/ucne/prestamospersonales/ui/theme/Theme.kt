@@ -10,7 +10,6 @@ import androidx.compose.ui.graphics.Color
 
 
 private val DarkColorPalette = darkColors(
-
     background = BlueBGDarkMode, //bg
     primary = LightlyBlue,  //Fondo de botones y al momento de seleccionar un tf
     secondary = RegularBlue, // FloatActionButton
@@ -23,7 +22,7 @@ private val DarkColorPalette = darkColors(
 
 @SuppressLint("ConflictingOnColor")
 private val LightColorPalette = lightColors(
-    primary = RegularBlue,
+    primary = LightBlue,
     primaryVariant = LightlyBlue,
     secondary = LightBlue,
     surface = RegularBlue,

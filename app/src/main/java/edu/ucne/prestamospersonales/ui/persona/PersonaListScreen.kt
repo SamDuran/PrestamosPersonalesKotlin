@@ -19,8 +19,9 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import edu.ucne.prestamospersonales.data.local.entities.Persona
 import edu.ucne.prestamospersonales.ui.components.ItemCard
 import edu.ucne.prestamospersonales.ui.components.StyledTopBar
-import edu.ucne.prestamospersonales.ui.components.TopBarStyles
+import edu.ucne.prestamospersonales.ui.components.TopBarStyle
 import edu.ucne.prestamospersonales.util.DateConverter
+import edu.ucne.prestamospersonales.util.filtersPersona
 
 @Composable
 fun PersonaListScreen(
@@ -29,13 +30,13 @@ fun PersonaListScreen(
     viewModel: PersonaListViewModel = hiltViewModel(),
     onPersonaClick: (Int) -> Unit,
 ) {
-
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitleFind,
+                style = TopBarStyle.BackTitleFind,
                 title = "Personas",
-                onBackClick = onNavigationBack
+                onBackClick = onNavigationBack,
+                filtros = filtersPersona
             )
         },
         floatingActionButton = {

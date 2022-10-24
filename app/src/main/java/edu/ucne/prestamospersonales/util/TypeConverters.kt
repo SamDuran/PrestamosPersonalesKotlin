@@ -17,6 +17,7 @@ class Converters {
     }
 }
 
+@Suppress("DEPRECATION")
 @ProvidedTypeConverter
 class DateConverter {
     @TypeConverter

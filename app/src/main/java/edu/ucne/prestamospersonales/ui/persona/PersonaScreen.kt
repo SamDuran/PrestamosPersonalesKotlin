@@ -19,6 +19,7 @@ import androidx.compose.material.icons.outlined.Add
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
@@ -67,7 +68,7 @@ fun PersonaScreen(
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitle,
+                style = TopBarStyle.BackTitle,
                 title = "Registro de Personas",
                 onBackClick = onNavigateBack
             )
@@ -340,7 +341,7 @@ fun PersonaScreen(
                                         .fillMaxWidth()
                                         .padding(horizontal = 8.dp)
                                 ) {
-                                    Text(text = ocupacion.descripcion, textAlign = TextAlign.Center)
+                                    Text(text = ocupacion.descripcion, textAlign = TextAlign.Center, color= Color.White)
                                 }
                             }
                         }

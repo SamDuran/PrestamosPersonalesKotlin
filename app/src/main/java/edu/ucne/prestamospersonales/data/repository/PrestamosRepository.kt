@@ -14,14 +14,14 @@ class PrestamosRepository @Inject constructor(
 
     suspend fun find(id: Int) = db.prestamoDao.find(id)
 
+    suspend fun findPersona(id: Int) = db.prestamoDao.findPersona(id)
     fun getList() = db.prestamoDao.getList()
 
+    suspend fun findOcupacion(id: Int) = db.prestamoDao.findOcupacion(id)
+
     //foreign Functions
-    suspend fun findOcupacion(id: Int) = db.ocupacionDao.find(id)
-
-    suspend fun findPersona(id: Int) = db.personaDao.find(id)
-
     suspend fun updatePersona(persona: Persona) = db.personaDao.insert(persona)
+    suspend fun getPersona(id:Int) = db.personaDao.find(id)
 
     fun getPersonaList() = db.personaDao.getList()
 }

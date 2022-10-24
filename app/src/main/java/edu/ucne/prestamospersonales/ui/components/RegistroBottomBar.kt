@@ -17,8 +17,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.dp
-import edu.ucne.prestamospersonales.ui.theme.bgVariant3
-import edu.ucne.prestamospersonales.ui.theme.bgVariant4
+import edu.ucne.prestamospersonales.ui.theme.bgBar1
+import edu.ucne.prestamospersonales.ui.theme.bgBar2
 
 @Composable
 fun RegistroBottomBar(
@@ -27,7 +27,7 @@ fun RegistroBottomBar(
 ) {
     BottomAppBar(
         contentPadding = PaddingValues.Absolute(),
-        modifier = Modifier.height(76.dp),
+        modifier = Modifier.height(78.dp),
         cutoutShape = MaterialTheme.shapes.small.copy(
             CornerSize(percent = 50)
         )) {
@@ -36,16 +36,17 @@ fun RegistroBottomBar(
                 .fillMaxWidth()
                 .background(brush = Brush.verticalGradient(
                     colors = listOf(
-                        bgVariant3(),
-                        bgVariant4()
+                        bgBar1(),
+                        bgBar2()
                     )
                 )),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             FloatingActionButton(
                 onClick = onNuevoClick,
-                modifier = Modifier.size(135.dp)
+                modifier = Modifier.size(120.dp)
                     .padding(start = 20.dp)
+                    .offset(y = (-7).dp)
                     .border(BorderStroke(7.dp, MaterialTheme.colors.background), RoundedCornerShape(50.dp))
             ) {
                 Icon(imageVector = Icons.Outlined.FiberNew,
@@ -56,8 +57,9 @@ fun RegistroBottomBar(
             }
             FloatingActionButton(
                 onClick = onEliminarClick,
-                modifier = Modifier.size(135.dp)
+                modifier = Modifier.size(120.dp)
                     .padding(end = 20.dp)
+                    .offset(y = (-7).dp)
                     .border(BorderStroke(7.dp, MaterialTheme.colors.background), RoundedCornerShape(50.dp))
             ) {
                 Icon(imageVector = Icons.Outlined.Delete,

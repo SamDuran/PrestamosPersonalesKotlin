@@ -40,8 +40,8 @@ class PrestamosListViewModel @Inject constructor(
     fun getPersona(personaId: Int) : String {
         var persona by mutableStateOf("")
         viewModelScope.launch {
-            repository.findPersona(personaId)?.let{
-                persona = it.nombres
+            repository.findPersona(personaId).collect{ nombre ->
+                persona = nombre
             }
         }
         return persona
@@ -49,10 +49,8 @@ class PrestamosListViewModel @Inject constructor(
     fun getOcupacion(prestamo : Prestamo) : String?{
         var ocupacion1: String? = null
         viewModelScope.launch {
-            repository.findPersona(prestamo.personaId)?.let {
-                repository.findOcupacion(it.ocupacionId)?.let {
-                    ocupacion -> ocupacion1 = ocupacion.descripcion
-                }
+            repository.findOcupacion(prestamo.prestamoId).collect { ocupacion ->
+                ocupacion1 = ocupacion
             }
         }
         return ocupacion1

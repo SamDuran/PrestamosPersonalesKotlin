@@ -13,8 +13,8 @@ class PersonaRepository @Inject constructor(
 
     suspend fun find(id: Int) = db.personaDao.find(id)
 
+    suspend fun getOcupacion(Id:Int) = db.personaDao.getOcupacion(Id)
+
     fun getList() = db.personaDao.getList()
 
-    //Foreigns functions
-    suspend fun getOcupacion(id: Int) = db.ocupacionDao.find(id)
 }

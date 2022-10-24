@@ -68,9 +68,13 @@ class PrestamosViewModel @Inject constructor(
                 )
             )
             //actualizar persona
-            repository.findPersona(uiState.personaId)?.let {
+            repository.getPersona(uiState.personaId)?.let {persona->
+                    var newBalance = 0.0
+                    repository.find(uiState.prestamoId)?.let{prestamo->
+                        newBalance = persona.balance-prestamo.balance+uiState.balance.toDouble()
+                    }
                 repository.updatePersona(
-                    it.copy(balance = (it.balance + uiState.balance.toDouble()))
+                    persona.copy(balance = newBalance)
                 )
             }
         }
@@ -96,8 +100,8 @@ class PrestamosViewModel @Inject constructor(
 
     private fun findPersona(personaId: Int)  {
         viewModelScope.launch {
-            repository.findPersona(personaId)?.let {
-                personaSelected = it.nombres
+            repository.findPersona(personaId).collect {
+                personaSelected = it
             }
         }
     }

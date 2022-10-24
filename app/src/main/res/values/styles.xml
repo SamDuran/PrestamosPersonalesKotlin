@@ -1,0 +1,16 @@
+<resources>
+
+    <style name="Widget.Theme.PrestamosPersonales.ActionBar.Fullscreen" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+        <item name="android:buttonBarStyle">?android:attr/buttonBarStyle</item>
+    </style>
+
+
+    <style name="SplashNoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashbg</item>
+    </style>
+
+    <style name="mainTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="android:windowBackground">@drawable/mainbg</item>
+    </style>
+</resources>

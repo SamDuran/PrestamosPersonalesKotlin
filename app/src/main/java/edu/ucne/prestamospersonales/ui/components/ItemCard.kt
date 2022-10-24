@@ -15,12 +15,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import edu.ucne.prestamospersonales.ui.theme.bgVariant2
-import edu.ucne.prestamospersonales.ui.theme.surfaceVariant
+import edu.ucne.prestamospersonales.ui.theme.bgCard1
+import edu.ucne.prestamospersonales.ui.theme.bgCard2
 
 @Composable
 fun ItemCard(
-    modifier: Modifier = Modifier,content : @Composable ColumnScope.() -> Unit
+    modifier: Modifier = Modifier,
+    content : @Composable ColumnScope.() -> Unit
 ){
     Card(
         modifier = modifier.clip(RoundedCornerShape(10.dp)),
@@ -31,13 +32,13 @@ fun ItemCard(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(brush = Brush.verticalGradient(
-                    colors = listOf(bgVariant2(), surfaceVariant())
+                .background(brush = Brush.linearGradient(
+                    colors = listOf(bgCard1(), bgCard2())
                 ))
                 .animateContentSize(
                     animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioMediumBouncy,
-                        stiffness = Spring.StiffnessMedium
+                        dampingRatio = Spring.DampingRatioLowBouncy,
+                        stiffness = Spring.StiffnessLow
                     )
                 ),
             content = content

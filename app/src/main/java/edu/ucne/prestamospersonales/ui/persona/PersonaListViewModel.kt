@@ -38,7 +38,7 @@ class PersonaListViewModel @Inject constructor(
         var descripcion:String? = ""
         viewModelScope.launch {
             repository.getOcupacion(id)?.let { response ->
-                descripcion = response.descripcion
+                descripcion = response
             }
         }
         return descripcion

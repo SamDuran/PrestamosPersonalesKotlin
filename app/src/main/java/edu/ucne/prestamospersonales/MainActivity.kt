@@ -8,6 +8,7 @@ import androidx.annotation.RequiresApi
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import edu.ucne.prestamospersonales.ui.NavigationManager
+import edu.ucne.prestamospersonales.ui.SplashScreen
 import edu.ucne.prestamospersonales.ui.theme.PrestamosPersonalesTheme
 
 @AndroidEntryPoint
@@ -17,8 +18,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PrestamosPersonalesTheme {
-                val navController = rememberNavController()
 
+                val navController = rememberNavController()
                 //Can find the file on UI Package
                 NavigationManager(navController = navController)
             }

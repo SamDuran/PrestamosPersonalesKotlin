@@ -8,7 +8,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.outlined.Eject
+import androidx.compose.material.icons.outlined.Home
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -21,11 +21,11 @@ import androidx.navigation.NavHostController
 import edu.ucne.prestamospersonales.ui.components.MenuItem
 import edu.ucne.prestamospersonales.ui.components.StyledTopBar
 import edu.ucne.prestamospersonales.ui.components.SubMenuItem
-import edu.ucne.prestamospersonales.ui.components.TopBarStyles
-import edu.ucne.prestamospersonales.ui.theme.bgVariant
+import edu.ucne.prestamospersonales.ui.components.TopBarStyle
+import edu.ucne.prestamospersonales.ui.theme.bgBar1
+import edu.ucne.prestamospersonales.ui.theme.bgBar2
 import edu.ucne.prestamospersonales.ui.theme.bgVariant1
-import edu.ucne.prestamospersonales.ui.theme.bgVariant3
-import edu.ucne.prestamospersonales.ui.theme.bgVariant4
+import edu.ucne.prestamospersonales.ui.theme.bgVariant2
 import edu.ucne.prestamospersonales.util.Screen
 import kotlinx.coroutines.launch
 
@@ -68,6 +68,11 @@ fun HomeScreen(navController: NavHostController) {
             title = "Prestamo",
             onClick = { navController.navigate(Screen.PrestamosListScreen.ruta) }
         ),
+        MenuItem(
+            icon = Icons.Filled.Category,
+            title = "Articulos",
+            onClick = { navController.navigate(Screen.ArticulosListScreen.ruta) }
+        ),
     )
 
     Scaffold(
@@ -80,7 +85,7 @@ fun HomeScreen(navController: NavHostController) {
         ),
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.MenuTitle,
+                style = TopBarStyle.MenuTitle,
                 title = "Home",
                 showMenu = {
                     scope.launch {
@@ -96,7 +101,7 @@ fun HomeScreen(navController: NavHostController) {
             FloatingActionButton(
                 onClick = { navController.navigate(Screen.PrestamosListScreen.ruta) },modifier = Modifier.size(80.dp)
             ) {
-                Icon(Icons.Outlined.Eject, "Ir", modifier = Modifier.size(50.dp))
+                Icon(Icons.Outlined.Home, "Ir", modifier = Modifier.size(50.dp))
             }
         },
         isFloatingActionButtonDocked = true,
@@ -112,8 +117,8 @@ fun HomeScreen(navController: NavHostController) {
                         .fillMaxSize()
                         .background(brush = Brush.verticalGradient(
                             colors = listOf(
-                                bgVariant3(),
-                                bgVariant4()
+                                bgBar1(),
+                                bgBar2()
                             )
                         )),
                 ){
@@ -125,7 +130,7 @@ fun HomeScreen(navController: NavHostController) {
             Column(modifier = Modifier
                 .fillMaxSize()
                 .background(brush = Brush.verticalGradient(
-                    colors = listOf(bgVariant(), bgVariant1()))))
+                    colors = listOf(bgVariant1(), bgVariant2()))))
             {
                 Text(
                     text = "Menú",

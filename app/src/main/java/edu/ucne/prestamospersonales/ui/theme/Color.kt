@@ -14,28 +14,23 @@ val LightlyGold = Color(0xFFFEFFE0)
 val ExtremelyLightBlue = Color( 0xFFF9FFFF)
 val ExtremelyLightBlue2 = Color( 0xFFF1FFFF)
 
+/* ||========== DYNAMIC COLORS ==========|| */
+/*   NOTE: Colors 1 LIGHTLY THAN Colors 2   */
 
-@Composable
-fun bgVariant() : Color = if (isSystemInDarkTheme()) Color(0xFF000A23) else Color.White
+@Composable //BG 1
+fun bgVariant1() : Color = if (isSystemInDarkTheme()) Color(0xFF061250) else Color.White
+@Composable //BG 2
+fun bgVariant2() : Color = if (isSystemInDarkTheme()) Color(0xFF030C38) else Color(0xFFADC3FF)
 
-@Composable
-fun bgVariant1() : Color = if (isSystemInDarkTheme()) Color(0xFF001037) else Color(0xFFEDF2FF)
+@Composable//Bar 1
+fun bgBar1() : Color = if (isSystemInDarkTheme()) Color(0xFF00308B) else Color(0xFF0850B6)
+@Composable//Bar 2
+fun bgBar2() : Color = if (isSystemInDarkTheme()) Color(0xFF001C59) else Color(0xFF022C68)
 
-@Composable
-fun bgVariant2() : Color = if (isSystemInDarkTheme()) Color(0xFF002964) else Color(0xFF83C3FF)
-
-@Composable
-fun bgVariant3() : Color = if (isSystemInDarkTheme()) Color(0xFF00388B) else Color(0xFF2F9AFF)
-
-@Composable
-fun bgVariant4() : Color = if (isSystemInDarkTheme()) Color(0xFF002761) else Color(0xFF003786)
-
-@Composable
-fun surfaceVariant() : Color = if (isSystemInDarkTheme()) Color(0xFF002356) else Color(0xFF40A3FF)
-
-@Composable
-fun surfaceVariant2() : Color = if (isSystemInDarkTheme()) Color(0xFF071F74) else Color(0xFF0025A7)
-
+@Composable//Card 1
+fun bgCard1() : Color = if (isSystemInDarkTheme()) Color(0xFF002F92) else Color(0xFF0063D3)
+@Composable //card 2
+fun bgCard2() : Color = if (isSystemInDarkTheme()) Color(0xFF002574) else Color(0xFF0069E1)
 
 
 

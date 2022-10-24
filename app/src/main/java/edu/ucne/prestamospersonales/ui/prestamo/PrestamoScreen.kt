@@ -21,11 +21,13 @@ import androidx.compose.material.icons.outlined.Add
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusDirection
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import edu.ucne.prestamospersonales.ui.components.*
@@ -97,7 +99,7 @@ fun PrestamoScreen(
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitle,
+                style = TopBarStyle.BackTitle,
                 title = "Registro de Prestamos",
                 onBackClick = onNavigateBack
             )
@@ -237,7 +239,7 @@ fun PrestamoScreen(
                                         .fillMaxWidth()
                                         .padding(horizontal = 8.dp)
                                 ) {
-                                    Text(text = persona.nombres)
+                                    Text(text = persona.nombres,textAlign = TextAlign.Center, color= Color.White)
                                 }
                             }
                         }

@@ -17,7 +17,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import edu.ucne.prestamospersonales.data.local.entities.Ocupacion
 import edu.ucne.prestamospersonales.ui.components.ItemCard
 import edu.ucne.prestamospersonales.ui.components.StyledTopBar
-import edu.ucne.prestamospersonales.ui.components.TopBarStyles
+import edu.ucne.prestamospersonales.ui.components.TopBarStyle
+import edu.ucne.prestamospersonales.util.filtersOcupacion
 
 @Composable
 fun OcupacionListScreen(
@@ -29,9 +30,10 @@ fun OcupacionListScreen(
     Scaffold(
         topBar = {
             StyledTopBar(
-                style = TopBarStyles.BackTitleFind,
+                style = TopBarStyle.BackTitleFind,
                 title = "Ocupaciones",
-                onBackClick = onBackClick
+                onBackClick = onBackClick,
+                filtros = filtersOcupacion
             )
         },
         floatingActionButton = {
@@ -59,7 +61,7 @@ fun OcupacionListScreen(
 }
 
 @Composable
-fun OcupacionList(
+private fun OcupacionList(
     ocupaciones: List<Ocupacion>,
     modifier: Modifier = Modifier,
     onItemClick: (Int) -> Unit
@@ -74,7 +76,7 @@ fun OcupacionList(
 }
 
 @Composable
-fun OcupacionRow(
+private fun OcupacionRow(
     ocupacion: Ocupacion,
     modifier: Modifier = Modifier,
     onItemClick: (Int) -> Unit

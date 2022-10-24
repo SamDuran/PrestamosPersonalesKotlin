@@ -115,7 +115,7 @@ class PersonaViewModel @Inject constructor(
     private fun loadOcupacion(ocupacionId: Int) {
         viewModelScope.launch {
             repository.getOcupacion(ocupacionId)?.let {
-                ocupacionSelected = it.descripcion
+                ocupacionSelected = it
             }
         }
     }

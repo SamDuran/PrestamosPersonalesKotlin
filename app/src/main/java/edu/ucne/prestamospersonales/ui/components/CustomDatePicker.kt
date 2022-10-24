@@ -37,7 +37,7 @@ fun CustomDatePickerDialog(
     onSelectDate: (Date) -> Unit,
     onDismissRequest: () -> Unit
 ) {
-    Dialog(onDismissRequest = { onDismissRequest() }) {
+    Dialog(onDismissRequest = onDismissRequest) {
         DatePickerUI(label, onSelectDate ,onDismissRequest)
     }
 }
@@ -126,7 +126,7 @@ fun DateSelectionSection(
 
         InfiniteItemsPicker(
             items = years,
-            firstIndex = Int.MAX_VALUE / 2 + (currentYear - 1975),
+            firstIndex = Int.MAX_VALUE / 2 + (currentYear - 2360),
             onItemSelected = onYearChosen
         )
     }
@@ -178,7 +178,7 @@ val currentYear = Calendar.getInstance().get(Calendar.YEAR)
 val currentDay = Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
 val currentMonth = Calendar.getInstance().get(Calendar.MONTH)
 
-val years = (1950..2150).map { it.toString() }
+val years = (1950..2500).map { it.toString() }
 val monthsNumber = (1..12).map { it.toString() }
 val days = (1..31).map { it.toString() }
 val monthsNames = listOf(

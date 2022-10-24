@@ -3,11 +3,14 @@ package edu.ucne.prestamospersonales.ui
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import edu.ucne.prestamospersonales.ui.articulos.ArticulosListScreen
 import edu.ucne.prestamospersonales.ui.ocupacion.OcupacionScreen
 import edu.ucne.prestamospersonales.ui.ocupacion.OcupacionListScreen
 import edu.ucne.prestamospersonales.ui.persona.PersonaScreen
@@ -15,22 +18,25 @@ import edu.ucne.prestamospersonales.ui.persona.PersonaListScreen
 import edu.ucne.prestamospersonales.ui.prestamo.PrestamoScreen
 import edu.ucne.prestamospersonales.ui.prestamo.PrestamosListScreen
 import edu.ucne.prestamospersonales.util.Screen
+import androidx.compose.animation.Animatable
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
 fun NavigationManager(
     navController: NavHostController,
 ) {
+    val alphaAnimation = remember { androidx.compose.animation.core.Animatable(0f) }
+    LaunchedEffect(Unit) {
+        alphaAnimation.animateTo(1f)
+    }
+
     NavHost(
         navController = navController,
-        startDestination = Screen.SplashScreen.ruta
+        startDestination = Screen.HomeScreen.ruta
     ) {
-        //SplashScreen
-        composable(Screen.SplashScreen.ruta) {
-            SplashScreen{ navController.navigate(Screen.HomeScreen.ruta) }
-        }
         //Home Screen
         composable(Screen.HomeScreen.ruta) {
+
             HomeScreen(navController)
         }
         //Ocupacion Screen
@@ -84,6 +90,11 @@ fun NavigationManager(
             ){
                 navController.navigate(Screen.PrestamoScreen.ruta + "/$it")
             }
+        }
+        composable(Screen.ArticulosListScreen.ruta) {
+            ArticulosListScreen(
+                onBackClick ={navController.navigateUp()}
+            )
         }
     }
 }
