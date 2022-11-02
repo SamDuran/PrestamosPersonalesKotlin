@@ -1,19 +1,24 @@
 package edu.ucne.prestamospersonales.data.remote
 
 import edu.ucne.prestamospersonales.data.remote.dto.ArticuloDto
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Query
+import retrofit2.Response
+import retrofit2.http.*
 
 interface ArticulosApi {
-    @POST("/api/Articulo/save")
-    suspend fun save(
-        @Query("articuloId") articuloId:Int,
-        @Query("descripcion") descripcion: String,
-        @Query("marca") marca:String,
-        @Query("existencia") existencia:String
-    ) : ArticuloDto
+
 
     @GET("api/Articulos")
     suspend fun getList() : List<ArticuloDto>
+
+    @POST("api/Articulos")
+    suspend fun save(@Body articulo : ArticuloDto) : Response<ArticuloDto>
+
+    @GET("api/Articulos/{id}")
+    suspend fun getArticulo(@Path("id") id: Int): ArticuloDto?
+
+    @PUT("api/Articulos/{id}")
+    suspend fun updateArticulo(@Path("id")  id:Int, @Body newArticulo: ArticuloDto): Response<ArticuloDto>
+
+    @DELETE("api/Articulos/{id}")
+    suspend fun deleteArticulo(@Path("id")  id:Int): Response<ArticuloDto>
 }
