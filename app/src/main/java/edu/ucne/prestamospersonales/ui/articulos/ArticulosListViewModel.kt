@@ -24,11 +24,14 @@ class ArticulosListViewModel @Inject constructor(
     val uiState : StateFlow<ArticulosListUiState> = _uiState.asStateFlow()
 
     init{
-        viewModelScope.launch {
-                _uiState.update {
-                    it.copy(articulos = repository.getList())
-                }
+        getList()
+    }
 
+    fun getList() {
+        viewModelScope.launch {
+            _uiState.update {
+                it.copy(articulos = repository.getArticulos())
+            }
         }
     }
 }
