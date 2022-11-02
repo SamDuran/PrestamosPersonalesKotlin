@@ -17,7 +17,7 @@ class PrestamosRepository @Inject constructor(
     suspend fun findPersona(id: Int) = db.prestamoDao.findPersona(id)
     fun getList() = db.prestamoDao.getList()
 
-    suspend fun findOcupacion(id: Int) = db.prestamoDao.findOcupacion(id)
+    fun findOcupacion(id: Int) = db.prestamoDao.findOcupacion(id)
 
     //foreign Functions
     suspend fun updatePersona(persona: Persona) = db.personaDao.insert(persona)

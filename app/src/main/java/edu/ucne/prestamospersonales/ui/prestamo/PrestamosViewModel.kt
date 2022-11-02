@@ -93,14 +93,14 @@ class PrestamosViewModel @Inject constructor(
                 )
                 fechaPrestamo = DateConverter().toString(it.fecha)
                 fechaVencimiento= DateConverter().toString(it.vence)
-                findPersona(it.personaId)
+                findPersona(it.prestamoId)
             }
         }
     }
 
     private fun findPersona(personaId: Int)  {
         viewModelScope.launch {
-            repository.findPersona(personaId).collect {
+            repository.findPersona(personaId)?.let {
                 personaSelected = it
             }
         }

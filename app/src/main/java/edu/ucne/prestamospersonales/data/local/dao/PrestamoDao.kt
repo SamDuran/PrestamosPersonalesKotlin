@@ -17,7 +17,7 @@ interface PrestamoDao {
     suspend fun find(id: Int): Prestamo?
 
     @Query("SELECT nombres FROM Personas as Pe Inner Join Prestamos as P on Pe.id = p.personaId WHERE P.prestamoId = :id LIMIT 1")
-    fun findPersona(id: Int): Flow<String>
+    suspend fun findPersona(id: Int): String?
 
     @Query("SELECT descripcion FROM Ocupaciones as O " +
             "inner join Personas as Pe on O.id = Pe.ocupacionId " +

@@ -51,6 +51,11 @@ fun HomeScreen(navController: NavHostController) {
             title = "Prestamo",
             onClick = { navController.navigate(Screen.PrestamoScreen.ruta + "/0") }
         ),
+        MenuItem(
+            icon = Icons.Filled.Category,
+            title = "Articulos",
+            onClick = { navController.navigate(Screen.ArticulosScreen.ruta + "/0") }
+        ),
     )
     val subMenuConsultaItems = listOf(
         MenuItem(
@@ -99,7 +104,7 @@ fun HomeScreen(navController: NavHostController) {
         floatingActionButtonPosition = FabPosition.Center,
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { navController.navigate(Screen.PrestamosListScreen.ruta) },modifier = Modifier.size(80.dp)
+                onClick = { navController.navigate(Screen.ArticulosListScreen.ruta) },modifier = Modifier.size(80.dp)
             ) {
                 Icon(Icons.Outlined.Home, "Ir", modifier = Modifier.size(50.dp))
             }

@@ -11,5 +11,6 @@ sealed class Screen(
     object PrestamosListScreen : Screen("PrestamoList")
     object HomeScreen : Screen("Home")
     object SplashScreen : Screen("SplashScreen")
+    object ArticulosScreen : Screen("Articulo")
     object ArticulosListScreen : Screen("ArticuloList")
 }

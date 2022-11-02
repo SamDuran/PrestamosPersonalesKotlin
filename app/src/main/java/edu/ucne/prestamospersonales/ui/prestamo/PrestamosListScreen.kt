@@ -76,13 +76,15 @@ fun PrestamoListBody(
     ) {
         this.items(prestamos) { prestamo ->
             val ocupacion = viewModel.getOcupacion(prestamo) ?: ""
-            val persona = viewModel.getPersona(prestamo.personaId)
+            val persona = viewModel.getPersona(prestamo.prestamoId)
 
-            PrestamoRow(prestamo = prestamo,
-                persona = persona,
-                ocupacion = ocupacion
-            ) { id ->
-                onItemClick(id)
+            persona?.let {
+                PrestamoRow(prestamo = prestamo,
+                    persona = it,
+                    ocupacion = ocupacion
+                ) { id ->
+                    onItemClick(id)
+                }
             }
         }
     }

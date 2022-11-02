@@ -1,8 +1,5 @@
 package edu.ucne.prestamospersonales.ui.prestamo
 
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,10 +34,10 @@ class PrestamosListViewModel @Inject constructor(
         }
     }
 
-    fun getPersona(personaId: Int) : String {
-        var persona by mutableStateOf("")
-        viewModelScope.launch {
-            repository.findPersona(personaId).collect{ nombre ->
+    fun getPersona(personaId: Int) : String? {
+        var persona: String? = null
+        viewModelScope.launch{
+            repository.findPersona(personaId)?.let{ nombre ->
                 persona = nombre
             }
         }

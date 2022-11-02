@@ -11,14 +11,14 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import edu.ucne.prestamospersonales.ui.articulos.ArticulosListScreen
-import edu.ucne.prestamospersonales.ui.ocupacion.OcupacionScreen
+import edu.ucne.prestamospersonales.ui.articulos.ArticulosScreen
 import edu.ucne.prestamospersonales.ui.ocupacion.OcupacionListScreen
-import edu.ucne.prestamospersonales.ui.persona.PersonaScreen
+import edu.ucne.prestamospersonales.ui.ocupacion.OcupacionScreen
 import edu.ucne.prestamospersonales.ui.persona.PersonaListScreen
+import edu.ucne.prestamospersonales.ui.persona.PersonaScreen
 import edu.ucne.prestamospersonales.ui.prestamo.PrestamoScreen
 import edu.ucne.prestamospersonales.ui.prestamo.PrestamosListScreen
 import edu.ucne.prestamospersonales.util.Screen
-import androidx.compose.animation.Animatable
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Composable
@@ -62,6 +62,10 @@ fun NavigationManager(
                 addPersonaClick = { navController.navigate(Screen.PersonaScreen.ruta+"/0") }
             )
         }
+        composable(Screen.ArticulosScreen.ruta+"/{id}", arguments = listOf(navArgument("id") {type = NavType.IntType})) {
+            val articuloId = it.arguments?.getInt("id")?:0
+            ArticulosScreen( articuloId = articuloId ,onNavigateBack = { navController.navigateUp() })
+        }
         //Ocupacion List Screen
         composable(Screen.OcupacionListScreen.ruta) {
             OcupacionListScreen(
@@ -93,8 +97,11 @@ fun NavigationManager(
         }
         composable(Screen.ArticulosListScreen.ruta) {
             ArticulosListScreen(
-                onBackClick ={navController.navigateUp()}
-            )
+                onBackClick ={navController.navigateUp()},
+                AddClick = {navController.navigate(Screen.ArticulosScreen.ruta+"/0")}
+            ) {
+                navController.navigate(Screen.ArticulosScreen.ruta + "/$it")
+            }
         }
     }
 }
