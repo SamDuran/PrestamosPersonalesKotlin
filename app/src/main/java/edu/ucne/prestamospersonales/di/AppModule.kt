@@ -45,8 +45,8 @@ object AppModule {
     @Provides
     fun providesArticulosApi(moshi: Moshi): ArticulosApi {
         return Retrofit.Builder()
-            //.baseUrl("http://samarticulosapi.somee.com/")
-            .baseUrl("https://gestioninventario.azurewebsites.net/")
+            .baseUrl("http://samarticulosapi.somee.com/")
+            //.baseUrl("https://gestioninventario.azurewebsites.net/")
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             .create(ArticulosApi::class.java)
